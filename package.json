@@ -1,0 +1,10 @@
+{
+	"name": "node-express-angular",
+	"version":"0.0.0",
+	"description":"demo for using AngularJS UI-Router",
+	"main":"server.js",
+	"author": "Bondifrench",
+	"dependencies": {
+		"express":"~3.4.4"
+	}
+}
