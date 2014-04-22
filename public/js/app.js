@@ -2,7 +2,8 @@
 
 var myApp = angular.module('MyApp', ['ui.router','myAppControllers']);
 
-myApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+myApp.config(['$stateProvider', '$urlRouterProvider','$locationProvider', 
+	function ($stateProvider, $urlRouterProvider, $locationProvider) {
 	$urlRouterProvider.otherwise('/home');
 	$stateProvider
 		.state('home',{
@@ -21,12 +22,13 @@ myApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, 
 		.state('about', {
 			url: '/about',
 			views: {
-				'':{templateUrl: './partials/partial-about.html'},
+				'':{templateUrl: '/partials/partial-about.html'},
 				'columnOne@about':{template:'Look I am a column!'},
 				'columnTwo@about': {
-					templateUrl : './partials/table-data.html',
+					templateUrl : '/partials/table-data.html',
 					controller: 'scotchCtrl'
 				}
 			}
 		});	
+		$locationProvider.html5Mode(true);
 	}]);
